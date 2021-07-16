@@ -1,0 +1,22 @@
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  justify-content: center;
+}
+
+.bausteine{
+  color: #0073aa;
+  padding: 2%;
+  border: .1rem solid #0073aa;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: row;
+
+  &:hover{
+    background-color: #0073aa;
+    color: white;
+    cursor: grab;
+  }
+}

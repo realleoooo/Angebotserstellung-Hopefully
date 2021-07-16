@@ -1,0 +1,56 @@
+h1 {
+  text-align: center;
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  border: 1px solid black;
+  width: 650px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+textarea {
+  width: 92%;
+  height: 95%;
+  border-right: 2px dashed black;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+}
+
+#add_circle {
+  color: green;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#delete-btn{
+  color: #ffc83c;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#save-btn{
+  color: green;
+
+  &:hover{
+    cursor: pointer;
+  }
+}

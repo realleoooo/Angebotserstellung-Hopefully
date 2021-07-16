@@ -1,0 +1,7 @@
+<nav class="layout">
+  <div *ngFor="let theme of themes"
+       routerLink="{{theme.path}}" class="links">
+    <span
+      routerLinkActive="active">{{theme.name}}</span>
+  </div>
+</nav>

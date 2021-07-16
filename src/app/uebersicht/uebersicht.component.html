@@ -1,0 +1,13 @@
+<div id="layout">
+  <div id="wrapper">
+    <button id="btn" (click)="addAngebot()" routerLink="/angebot/{{this.newId}}" mat-raised-button>
+      Angebot erstellen
+    </button>
+    <div id="containerSearch">
+      <app-searchbar></app-searchbar>
+    </div>
+  </div>
+  <div id="containerTabelle">
+    <app-uebersicht-tabelle></app-uebersicht-tabelle>
+  </div>
+</div>

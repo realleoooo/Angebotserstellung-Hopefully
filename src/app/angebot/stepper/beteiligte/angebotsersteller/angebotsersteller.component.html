@@ -1,0 +1,7 @@
+<h1>Angebotsersteller</h1>
+<form #meinFormular="ngForm" (ngSubmit)='save(meinFormular.value)'>
+  <input type="text" name="Name" placeholder="Max Mustermann" ngModel>
+  <input type="text" name="Abteilung" placeholder="Musterabteilung" ngModel>
+  <input type="text" name="Telefon" placeholder="+49 2102 30961-05" ngModel>
+  <input type="text" name="Email" placeholder="max.mustermann@gmail.com" ngModel>
+</form>

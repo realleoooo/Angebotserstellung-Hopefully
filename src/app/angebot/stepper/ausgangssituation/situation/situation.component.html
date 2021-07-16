@@ -1,0 +1,18 @@
+<h1>Ausgangssituation</h1>
+<div id="layout">
+<div class="wrapper" *ngFor="let s of sit">
+  <textarea>
+  </textarea>
+  <div class="icons">
+    <span id="delete-btn" class="material-icons" (click)="deleteField(s)">
+      delete
+    </span>
+    <span id="save-btn" class="material-icons">
+      save
+    </span>
+  </div>
+</div>
+<span id="add_circle" class="material-icons" (click)="addField()">
+add_circle
+</span>
+</div>

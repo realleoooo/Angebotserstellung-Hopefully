@@ -1,0 +1,25 @@
+.layout {
+  padding: 2%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #0073aa;
+}
+
+#logo {
+  padding: 1%;
+
+  &:hover {
+    cursor: pointer;
+    border-radius: 20px;
+    background: rgba(226,226,226,0.41);
+
+  }
+
+  .material-icons {
+    padding: 1%;
+    color: white;
+  }
+}

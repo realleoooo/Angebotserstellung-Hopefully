@@ -1,0 +1,7 @@
+<h1>Kunde</h1>
+<form #meinFormular="ngForm" (ngSubmit)='save(meinFormular.value)'>
+  <input type="text" name="Unternehmensname" placeholder="Unternehmensname + Rechtsform" ngModel>
+  <input type="text" name="Abteilung" placeholder="Abteilung oder Name" ngModel>
+  <input type="text" name="Straße" placeholder="Straße oder Postfach" ngModel>
+  <input type="text" name="PLZ" placeholder="PLZ Ort" ngModel>
+</form>

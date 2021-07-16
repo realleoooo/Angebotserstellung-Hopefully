@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(227,227,227,0.41);
+}
+
+td.mat-cell, td.mat-footer-cell {
+  font-size: 19px;
+  border-bottom-style: none;
+  padding: 20px 0;
+}
+
+th.mat-header-cell{
+  border-bottom: 3px solid #0073aa;
+  font-size: 20px;
+}
+
+.material-icons{
+  color: #0073aa;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.mat-column-operation {
+  //width: 40%;
+}
+
+th, td{
+  text-align: left;
+}
+
+.operation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
