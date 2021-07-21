@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Angebote} from "./angebote";
-import {MockTabellenDaten} from "./mock-tabellenDaten";
 import {DatenbankService} from "../../datenbank.service";
+import {MatTableDataSource} from "@angular/material/table";
+import {Router} from "@angular/router";
+import {SnackbarService} from "../../shared/snackbar.service";
 
 @Component({
   selector: 'app-uebersicht-tabelle',
@@ -10,20 +12,31 @@ import {DatenbankService} from "../../datenbank.service";
 })
 export class UebersichtTabelleComponent implements OnInit {
   displayedColumns: string[] = ['kunde', 'angebotstitel', 'erstellungsdatum', 'operation'];
-  dataSource : Angebote[] = this.datenbankService.getMockTabellenDaten();
+  dataSource : MatTableDataSource<Angebote> = new MatTableDataSource(this.datenbankService.getMockTabellenDaten());
 
-  constructor(private datenbankService: DatenbankService) {
+  constructor(
+    private datenbankService: DatenbankService,
+    private router: Router,
+    private snackbar: SnackbarService
+    ) {
   }
 
   ngOnInit(): void {
+    let id = Number(this.router.url.split("/").pop());
+    let data = this.datenbankService.getMockTabellenDaten().find(element => element.id === id)!;
   }
 
   deleteData(angebot: Angebote) {
     this.datenbankService.deleteData(angebot);
-    this.dataSource = this.datenbankService.getMockTabellenDaten();
+    this.dataSource = new MatTableDataSource(this.datenbankService.getMockTabellenDaten());
+    this.snackbar.openSnackbarSuccess("Angebot " + angebot.angebotstitel + " wurde erfolgreich gelöscht.", "Ok");
   }
 
-  copyData() {
-
+  copyAngebot(angebot: Angebote) {
+    this.datenbankService.copyAngebot(angebot, angebot.kunde, angebot.angebotstitel, angebot.erstellungsdatum, angebot.kundenData, angebot.angebotserstellerData);
+    this.dataSource = new MatTableDataSource(this.datenbankService.getMockTabellenDaten());
+    this.snackbar.openSnackbarSuccess("Angebot " + angebot.angebotstitel + " wurde erfolgreich kopiert.", "Ok");
   }
+
+
 }

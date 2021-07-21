@@ -11,6 +11,23 @@ app-hinweise {
   border-right: 1px solid black;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.titel_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#titel {
+  font-size: 110%;
+  width: 20vw;
+}
+
 .beteiligte {
   margin-top: 10%;
   display: flex;
@@ -19,13 +36,18 @@ app-hinweise {
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
+  text-align: center;
 }
 
-app-angebotsersteller{
+#angebotsersteller {
   margin-left: 5%;
 }
 
-app-beteiligte-buttons{
+mat-form-field {
+  width: 25vw;
+}
+
+app-operation-bar {
   margin: 10px 80px 0 0;
   display: flex;
   justify-content: flex-end;

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl} from "@angular/forms";
+import {Component, OnInit, Output} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-kunde',
@@ -7,18 +7,21 @@ import {FormControl} from "@angular/forms";
   styleUrls: ['./kunde.component.scss']
 })
 export class KundeComponent implements OnInit {
-  unternehmensname: FormControl = new FormControl();
-  abteilung: FormControl = new FormControl();
-  strasse: FormControl = new FormControl();
-  plz: FormControl = new FormControl();
+  // @Output() kundeWurdeGespeichert =
 
-  constructor() { }
+  kundenData = new FormGroup({
+    unternehmensname: new FormControl(),
+    abteilung: new FormControl(),
+    strasse: new FormControl(),
+    plz: new FormControl()
+  })
+
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
 
-  save(value: any) {
-
-  }
 }

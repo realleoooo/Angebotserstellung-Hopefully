@@ -57,3 +57,14 @@ h1 {
     background: rgba(226,226,226,0.41);
   }
 }
+
+.snack-bar-success{
+  .mat-simple-snackbar-action {
+    color: green !important;
+  }
+}
+.snack-bar-cancel{
+  .mat-simple-snackbar-action {
+    color: red !important;
+  }
+}

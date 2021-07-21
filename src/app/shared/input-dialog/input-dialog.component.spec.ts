@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BeteiligteButtonsComponent } from './beteiligte-buttons.component';
+import { InputDialogComponent } from './input-dialog.component';
 
-describe('BeteiligteButtonsComponent', () => {
-  let component: BeteiligteButtonsComponent;
-  let fixture: ComponentFixture<BeteiligteButtonsComponent>;
+describe('InputDialogComponent', () => {
+  let component: InputDialogComponent;
+  let fixture: ComponentFixture<InputDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BeteiligteButtonsComponent ]
+      declarations: [ InputDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BeteiligteButtonsComponent);
+    fixture = TestBed.createComponent(InputDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
