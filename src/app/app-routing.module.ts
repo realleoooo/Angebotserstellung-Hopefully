@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {UebersichtComponent} from "./uebersicht/uebersicht.component";
-import {AngebotComponent} from "./angebot/angebot.component";
-import {TextbausteineComponent} from "./angebot/stepper/ausgangssituation/textbausteine/textbausteine.component";
+import {OverviewComponent} from "./overview/overview.component";
+import {OfferComponent} from "./offer/offer.component";
+import {TextBlockComponent} from "./textBlock/textBlock.component";
 
 const routes: Routes = [
-  {path: 'textbausteine', component: TextbausteineComponent},
-  {path: 'angebot/:id', component: AngebotComponent},
-  {path: 'angebot', component: AngebotComponent},
-  {path: 'uebersicht', component: UebersichtComponent}
+  {path: 'textblocks', component: TextBlockComponent},
+  {path: 'offer/:id', component: OfferComponent},
+  {path: 'offer', component: OfferComponent},
+  {path: 'overview', component: OverviewComponent}
 ];
 
 @NgModule({

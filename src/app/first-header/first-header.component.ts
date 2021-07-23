@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {UebersichtComponent} from "../uebersicht/uebersicht.component";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-first-header',
@@ -8,7 +7,8 @@ import {UebersichtComponent} from "../uebersicht/uebersicht.component";
 })
 export class FirstHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

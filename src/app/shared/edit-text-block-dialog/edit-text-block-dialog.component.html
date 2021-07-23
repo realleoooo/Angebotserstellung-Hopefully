@@ -1,0 +1,27 @@
+<div class="layout">
+  <h1 mat-dialog-title>Textbaustein bearbeiten</h1>
+  <div mat-dialog-content>
+    <div [formGroup]="editedTextBlockData" id="textarea-layout">
+      <mat-form-field appearance="standard">
+        <mat-label>Name</mat-label>
+        <textarea matInput formControlName="editedTextBlockName"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Beschreibung</mat-label>
+        <textarea matInput formControlName="editedTextBlockDescription"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Inhalt</mat-label>
+        <textarea matInput id="content" formControlName="editedTextBlockContent"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions id="btns">
+    <button mat-button (click)="onCancel()">
+      Abbrechen
+    </button>
+    <button mat-button (click)="onDone()">
+      Textbaustein fertigstellen
+    </button>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div id="layout">
+  <h1 mat-dialog-title>Angebotsname eingeben</h1>
+  <div id="wrapper">
+    <div mat-dialog-content>
+      <mat-form-field appearance="standard">
+        <mat-label>Angebotstitel</mat-label>
+        <input matInput  cdkFocusInitial #offerTitle required appForbiddenName="">
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onCancel()">Abbrechen</button>
+      <button [mat-dialog-close]="offerTitle.value" disabled="{{!offerTitle.checkValidity()}}"
+              mat-button>Ok
+      </button>
+    </div>
+  </div>
+</div>

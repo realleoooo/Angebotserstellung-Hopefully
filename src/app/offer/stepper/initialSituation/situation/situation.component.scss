@@ -1,0 +1,55 @@
+h1 {
+  text-align: center;
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+textarea {
+  width: 95%;
+  border-right: 2px dashed black;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 2%;
+}
+
+#add_circle {
+  display: flex;
+  justify-content: center;
+  color: green;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#delete-btn {
+  color: #ffc83c;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#save-btn {
+  color: green;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, Event as RouterEvent, NavigationStart} from "@angular/router";
+import {Event as RouterEvent, NavigationStart, Router} from "@angular/router";
 import {filter} from "rxjs/operators";
 
 interface Theme {
@@ -14,40 +14,41 @@ interface Theme {
 })
 export class SecondHeaderComponent implements OnInit {
   themes: Theme[] = [
-    {name: 'Übersicht', path: '/uebersicht'},
-    {name: 'Textbausteine', path: '/textbausteine'}
+    {name: 'Übersicht', path: '/overview'},
+    {name: 'Textbausteine', path: '/textblocks'}
   ];
 
   constructor(
-    private router: Router
-  ) {
+    private router: Router) {
   }
 
   ngOnInit(): void {
     this.router.events.pipe(filter((e: RouterEvent): e is NavigationStart =>
       e instanceof NavigationStart))
       .subscribe((e: NavigationStart) => {
-        this.handleRoute(e.url);
+        this.editMenuEntriesDependingOnRoute(e.url);
       });
   }
 
-  handleRoute(url: string) {
+  editMenuEntriesDependingOnRoute(url: string) {
     const offerIsOpenedAndOfferIsntInMenu: boolean =
-      url.includes('angebot') && !this.themes.some((t) => t.name === 'Angebot');
+      url.includes('offer') && !this.themes.some((t) => t.name === 'Angebot');
     const otherSiteThanOfferIsOpenedAndOfferIsInMenu: boolean =
-      !url.includes('angebot') && this.themes.some((t) => t.name === 'Angebot');
+      !url.includes('offer') && this.themes.some((t) => t.name === 'Angebot');
 
-    (offerIsOpenedAndOfferIsntInMenu)?
-      this.addOfferToMenu(url):
-    (otherSiteThanOfferIsOpenedAndOfferIsInMenu)?
-      this.removeOfferFromMenu()  : null;
+    if (offerIsOpenedAndOfferIsntInMenu) {
+      this.addOfferToMenu(url);
+    } else if (otherSiteThanOfferIsOpenedAndOfferIsInMenu) {
+      this.removeOfferFromMenu();
+    }
   }
 
-  addOfferToMenu(url : string){
+  addOfferToMenu(url: string) {
     this.themes.splice(1, 0, {name: 'Angebot', path: url});
   }
 
-  removeOfferFromMenu(){
-    this.themes.splice(1,1)
+  removeOfferFromMenu() {
+    this.themes.splice(1, 1)
   }
+
 }

@@ -1,0 +1,17 @@
+.layout {
+  text-align: center;
+}
+
+#textarea-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  height: 150px;
+}
+
+#btns {
+  display: flex;
+  justify-content: flex-end;
+}

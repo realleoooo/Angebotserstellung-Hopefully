@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+app-hints {
+  margin-top: 2%;
+}
+
+app-situation{
+  width: 100%;
+  padding: 0 2rem 0 2rem;
+  margin-top: 2%;
+  margin: 0 5%;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+app-blocks{
+  //padding-right: 10%;
+}
+

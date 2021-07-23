@@ -1,0 +1,58 @@
+<div id="overallLayout">
+
+  <app-hints></app-hints>
+
+  <div id="conditions">
+    <h1>Konditionen</h1>
+    <div id="conditionLayout">
+      <div class="blocks">
+        <label>Einsatzbeginn:</label>
+        <mat-form-field appearance="outline">
+          <mat-label>mm/dd/yyyy</mat-label>
+          <input matInput [matDatepicker]="startPicker">
+          <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+          <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="blocks">
+        <label>Einsatzende:</label>
+        <mat-form-field appearance="outline">
+          <mat-label>mm/dd/yyyy</mat-label>
+          <input matInput [matDatepicker]="endPicker">
+          <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+          <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="blocks">
+        <label>Einsatzort beim Kunden:</label>
+        <mat-form-field appearance="outline">
+          <mat-label>Ort des Kunden</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="blocks">
+        <label>Arbeitsumfang:</label>
+        <mat-form-field appearance="outline">
+          <mat-label>Anzahl der Projekttage</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="blocks">
+        <label>Vergültung:</label>
+        <mat-form-field appearance="outline">
+          <mat-label>mm/dd/yyyy</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="blocks">
+        <label>Gültigkeitsdatum des Angebots:</label>
+        <mat-form-field appearance="outline">
+          <mat-label>mm/dd/yyyy</mat-label>
+          <input matInput [matDatepicker]="validityPicker">
+          <mat-datepicker-toggle matSuffix [for]="validityPicker"></mat-datepicker-toggle>
+          <mat-datepicker #validityPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>

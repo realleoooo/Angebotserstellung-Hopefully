@@ -1,0 +1,28 @@
+#overallLayout {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+app-hints {
+  display: flex;
+}
+
+#conditions {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+#conditionLayout {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.blocks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

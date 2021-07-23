@@ -1,0 +1,65 @@
+<div class="layout">
+  <div class="wrapper">
+    <div class="title_btn">
+
+      <mat-form-field id="title" appearance="standard">
+        <mat-label>Angebotstitel</mat-label>
+        <input name="offerTitle" [formControl]="title" matInput #offerTitle required
+               appForbiddenName="">
+      </mat-form-field>
+      <button mat-button
+              disabled="{{!offerTitle.checkValidity()}}" (click)="correctOfferTitle(offerTitle.value)">
+        <span class="material-icons" style="background: none">
+          done
+        </span>
+      </button>
+
+    </div>
+    <div class="involvedPersons">
+      <div id="customer">
+        <h1>Kunde</h1>
+        <div [formGroup]="involvedPersonsData.customerData">
+          <mat-form-field appearance="outline">
+            <mat-label>Unternehmensname + Rechtsform</mat-label>
+            <input matInput type="text" name="companyName" formControlName="companyName">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Abteilung oder Name</mat-label>
+            <input matInput type="text" name="department" formControlName="department">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Straße oder Postfach</mat-label>
+            <input matInput type="text" name="street" formControlName="street">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>PLZ Ort</mat-label>
+            <input matInput type="text" name="postCode" formControlName="postCode">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div id="creator">
+        <h1>Angebotsersteller</h1>
+        <div [formGroup]="involvedPersonsData.creatorData">
+          <mat-form-field appearance="outline">
+            <mat-label>Max Mustermann</mat-label>
+            <input matInput type="text" name="name" formControlName="name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Musterabteilung</mat-label>
+            <input matInput type="text" name="department" formControlName="department">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>+49 2102 30961-05</mat-label>
+            <input matInput type="text" name="telephone" formControlName="telephone">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>max.mustermann@gmail.com</mat-label>
+            <input matInput type="text" name="email" formControlName="email">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-operation-bar (safeEmitter)="save()" (clearEmitter)="clear()"></app-operation-bar>

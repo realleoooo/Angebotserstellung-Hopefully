@@ -1,0 +1,22 @@
+<h1>Ausgangssituation</h1>
+<div id="layout">
+  <div *ngFor="let s of sit">
+    <mat-form-field appearance="outline">
+      <mat-label>Situation</mat-label>
+      <div class="wrapper">
+        <textarea matInput></textarea>
+        <div class="icons">
+            <span id="delete-btn" class="material-icons" (click)="deleteField(s)">
+              delete
+            </span>
+          <span id="save-btn" class="material-icons">
+              save
+            </span>
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+  <span id="add_circle" class="material-icons" (click)="addField()">
+    add_circle
+  </span>
+</div>

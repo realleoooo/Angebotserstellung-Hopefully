@@ -1,0 +1,27 @@
+<div class="layout">
+  <h1 mat-dialog-title>Textbaustein erstellen</h1>
+  <div mat-dialog-content>
+    <div [formGroup]="createdTextBlockData" id="textarea-layout">
+      <mat-form-field appearance="standard">
+        <mat-label>Name</mat-label>
+        <textarea matInput cdkFocusInitial formControlName="name"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Beschreibung</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Inhalt</mat-label>
+        <textarea matInput id="content" formControlName="content"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions id="btns">
+    <button mat-button (click)="onCancel()">
+      Abbrechen
+    </button>
+    <button mat-button [mat-dialog-close]="createdTextBlockData.value">
+      Textbaustein erstellen
+    </button>
+  </div>
+</div>

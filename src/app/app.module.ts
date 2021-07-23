@@ -5,34 +5,33 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FirstHeaderComponent} from './first-header/first-header.component';
 import {SecondHeaderComponent} from './second-header/second-header.component';
-import {SearchbarComponent} from './uebersicht/searchbar/searchbar.component';
+import {SearchbarComponent} from './shared/searchbar/searchbar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
-import {UebersichtComponent} from './uebersicht/uebersicht.component';
+import {OverviewComponent} from './overview/overview.component';
 import {MatTableModule} from "@angular/material/table";
-import {UebersichtTabelleComponent} from './uebersicht/uebersicht-tabelle/uebersicht-tabelle.component';
-import {AngebotComponent} from './angebot/angebot.component';
-import {StepperComponent} from './angebot/stepper/stepper.component';
+import {OverviewTableComponent} from './overview/overview-table/overview-table.component';
+import {OfferComponent} from './offer/offer.component';
+import {StepperComponent} from './offer/stepper/stepper.component';
 import {MatStepperModule} from "@angular/material/stepper";
-import {TextbausteineComponent} from './angebot/stepper/ausgangssituation/textbausteine/textbausteine.component';
+import {TextBlockComponent} from './textBlock/textBlock.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BeteiligteComponent} from './angebot/stepper/beteiligte/beteiligte.component';
-import {HinweiseComponent} from './angebot/stepper/hinweise/hinweise.component';
+import {InvolvedPersonsComponent} from './offer/stepper/involvedPersons/involvedPersons.component';
+import {HintsComponent} from './offer/stepper/hints/hints.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
-import {KundeComponent} from './angebot/stepper/beteiligte/kunde/kunde.component';
-import {AngebotserstellerComponent} from './angebot/stepper/beteiligte/angebotsersteller/angebotsersteller.component';
 import {MatInputModule} from "@angular/material/input";
-import {AusgangssituationComponent} from './angebot/stepper/ausgangssituation/ausgangssituation.component';
-import {SituationComponent} from './angebot/stepper/ausgangssituation/situation/situation.component';
-import {Searchbar2Component} from './angebot/stepper/ausgangssituation/textbausteine/searchbar2/searchbar2.component';
-import {BausteineComponent} from './angebot/stepper/ausgangssituation/textbausteine/bausteine/bausteine.component';
-import {KonditionenComponent} from './angebot/stepper/konditionen/konditionen.component';
+import {InitialSituationComponent} from './offer/stepper/initialSituation/initialSituation.component';
+import {SituationComponent} from './offer/stepper/initialSituation/situation/situation.component';
+import {BlocksComponent} from './offer/stepper/textBlock/blocks/blocks.component';
+import {ConditionsComponent} from './offer/stepper/conditions/conditions.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
-import {OperationBarComponent} from './angebot/stepper/beteiligte/operation-bar/operation-bar.component';
+import {OperationBarComponent} from './shared/operation-bar/operation-bar.component';
 import {MatButtonModule} from "@angular/material/button";
 import {SharedModule} from "./shared/shared.module";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {TextBlockTableComponent} from './textBlock/text-block-table/text-block-table.component';
 
 @NgModule({
   declarations: [
@@ -40,40 +39,40 @@ import {SharedModule} from "./shared/shared.module";
     FirstHeaderComponent,
     SecondHeaderComponent,
     SearchbarComponent,
-    UebersichtComponent,
-    UebersichtTabelleComponent,
-    AngebotComponent,
+    OverviewComponent,
+    OverviewTableComponent,
+    OfferComponent,
     StepperComponent,
-    TextbausteineComponent,
-    BeteiligteComponent,
-    HinweiseComponent,
-    KundeComponent,
-    AngebotserstellerComponent,
-    AusgangssituationComponent,
+    TextBlockComponent,
+    InvolvedPersonsComponent,
+    HintsComponent,
+    InitialSituationComponent,
     SituationComponent,
-    Searchbar2Component,
-    BausteineComponent,
-    KonditionenComponent,
+    BlocksComponent,
+    ConditionsComponent,
     OperationBarComponent,
+    TextBlockTableComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatTableModule,
-        MatStepperModule,
-        MatFormFieldModule,
-        ReactiveFormsModule,
-        MatCheckboxModule,
-        MatInputModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        FormsModule,
-        MatButtonModule,
-        SharedModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatTableModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule,
+    MatButtonModule,
+    SharedModule,
+    MatPaginatorModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
